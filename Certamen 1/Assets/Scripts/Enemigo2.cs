@@ -11,7 +11,7 @@ public class Enemigo2 : MonoBehaviour
     float velocidad = 3.0f;
     float distanciaCambio = 0.5f;
     int nSiguientenPosicion = 0;
-    public static void IniciarEnemigo2(Transform[] recorrido1)
+    public static void IniciarEnemigo(Transform[] recorrido1)
     {
         //transform.position  = new Vector3(6.14f, 1.5f, 7.76f);
         siguientePosicion = recorrido1[0].position;

@@ -10,7 +10,7 @@ public class Enemigo1 : MonoBehaviour
     float distanciaCambio = 0.5f;
     int nSiguientenPosicion = 0;
     // Start is called before the first frame update
-    public static void IniciarEnemigo1(Transform[] recorrido1)
+    public static void IniciarEnemigo(Transform[] recorrido1)
     {
         siguientePosicion = recorrido1[0].position;
         recorrido = recorrido1;  
