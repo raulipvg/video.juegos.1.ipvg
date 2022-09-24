@@ -9,7 +9,6 @@ public class Enemigo3 : MonoBehaviour
     float velocidad = 7.0f;
     float distanciaCambio = 0.5f;
     int nSiguientenPosicion = 0;
-    int vida3 = 2;
     public static void IniciarEnemigo(Transform[] recorrido1)
     {
         //transform.position  = new Vector3(6.14f, 1.5f, 7.76f);
@@ -38,10 +37,4 @@ public class Enemigo3 : MonoBehaviour
 
     }
 
-    public bool DanoVida()
-    {
-        vida3--;
-        if (vida3 == 0) return true;
-        else return false;
-    }
 }

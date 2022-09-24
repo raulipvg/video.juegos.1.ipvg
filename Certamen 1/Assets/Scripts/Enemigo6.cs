@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemigo6 : MonoBehaviour
+public class Enemigo6 : Enemigos
 {
 
-    public  int vida6 = 3;
     // Start is called before the first frame update
+    private void Start()
+    {
+        
+    }
     private void OnCollisionEnter(Collision otro)
     {
 
@@ -15,11 +18,5 @@ public class Enemigo6 : MonoBehaviour
     
     }
 
-    public  bool DanoVida()
-    {
-        vida6--;
-        if (vida6 == 0) return true;
-        else return false;
-    }
 
 }
