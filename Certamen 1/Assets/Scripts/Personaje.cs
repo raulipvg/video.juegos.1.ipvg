@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    float velocidadAvance = 3.0f;                                          //velocidad a la que avanzará sentido adelante/atrás
-    float velocidadRotacion = 20.0f;                                       //velocidad de rotación, al mover las flechas izquierda/derecha
+    float velocidadAvance = 6.0f;                                          //velocidad a la que avanzará sentido adelante/atrás
+    float velocidadRotacion = 60.0f;                                       //velocidad de rotación, al mover las flechas izquierda/derecha
     // Start is called before the first frame update
     void Start()
     {

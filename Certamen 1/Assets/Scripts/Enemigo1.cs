@@ -6,9 +6,10 @@ public class Enemigo1 : MonoBehaviour
 {
     static Transform[] recorrido;
     static Vector3 siguientePosicion;
-    float velocidad = 2.0f;
+    float velocidad = 5.0f;
     float distanciaCambio = 0.5f;
     int nSiguientenPosicion = 0;
+    int vida1 = 2;
     // Start is called before the first frame update
     public static void IniciarEnemigo(Transform[] recorrido1)
     {
@@ -33,5 +34,12 @@ public class Enemigo1 : MonoBehaviour
                 }
                 siguientePosicion = recorrido[nSiguientenPosicion].position;
             }
+    }
+
+    public bool DanoVida()
+    {
+        vida1--;
+        if (vida1 == 0) return true;
+        else return false;
     }
 }
