@@ -2992,7 +2992,6 @@ GameObject:
   - component: {fileID: 1556159969}
   - component: {fileID: 1556159970}
   - component: {fileID: 1556159964}
-  - component: {fileID: 1556159971}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -3123,20 +3122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BalaPrefab: {fileID: 2519800141740521699, guid: 84b1ee39cb69687419c3724e8f05f8be, type: 3}
   BalaVelocidad: 1000
---- !u!114 &1556159971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556159963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99865433ad2cdcf4283302f380947671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadAvance: 6
-  velocidadRotacion: 60
 --- !u!1 &1557563416
 GameObject:
   m_ObjectHideFlags: 0
