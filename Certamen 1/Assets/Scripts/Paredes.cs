@@ -17,10 +17,9 @@ public class Paredes : MonoBehaviour
     }
     private void OnTriggerEnter(Collider colision)
     {
-        if (colision.gameObject.CompareTag("Bala"))
+        if (colision.gameObject.CompareTag("Bala"))     // Identifica mediante la etiqueta si al colisión fue por una bala
         {
-            Debug.Log("Bala en la pared");
-            Destroy(colision.gameObject);
+            Destroy(colision.gameObject);               // Destruye la bala
         }
     }
 }

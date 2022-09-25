@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class Disparar : MonoBehaviour
 {
-    //Agregan punto de inicio de donde la bala saldra.
-    public GameObject BalaInicio;
-    //Agregan Bala Prefab
-    public GameObject BalaPrefab;
+    public GameObject BalaPrefab;   // Obtenida de la bala en Unity. Este objeto prefab tiene sus propiedades modificadas (como la posición). Revisar en los assets.
     //Agregar Bala Velocidad
+    [SerializeField]
     public float BalaVelocidad;
+
+
+    private void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
         //Input.GetButtonDown
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown("space"))
         {
-           
-            //1-Instanciar la BalaPrefab en las posiciones de BalaInicio
-            GameObject BalaTemporal = Instantiate(BalaPrefab, BalaInicio.transform.position, BalaInicio.transform.rotation);
+
+            //1-Instancia la BalaPrefab y le asigna Personaje como padre.
+            GameObject BalaTemporal = Instantiate(BalaPrefab, gameObject.GetComponent<Personaje>().transform);
 
             //Obtener Rigidbody para agregar Fuerza. 
             Rigidbody rb = BalaTemporal.GetComponent<Rigidbody>();

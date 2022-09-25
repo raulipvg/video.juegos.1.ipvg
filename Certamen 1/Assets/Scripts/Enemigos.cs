@@ -10,7 +10,7 @@ public class Enemigos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vidas = 2;
+        
     }
 
     // Update is called once per frame
@@ -38,4 +38,22 @@ public class Enemigos : MonoBehaviour
         return vidas <= 0;  //Utiliza <= ya que puede recibir dos balas contínuas que no alcance a calcular, lo que podría dar un falso negativo a ==0
     }
 
+    public void DificultadFacil()
+    {
+        Debug.Log("Facil");
+        vidas = 1;
+    }
+
+
+    public void DificultadMedia()
+    {
+        Debug.Log("Medio");
+        vidas = 2;
+    }
+
+    public void DificultadDificil()
+    {
+        Debug.Log("Dificil");
+        vidas = 3;
+    }
 }
