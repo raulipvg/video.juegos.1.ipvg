@@ -22,10 +22,10 @@
 - hay un error de que pierde la bala inicial (por colision) y se queda sin balas, por lo cual tira un error en null. Favor Arreglar
 - Cree a cada enemigo una variable vida que esta seteada en 2 por ahora
 - Pero accedo de a esas  variables de forma un poco trucha (un switch en Balazo.cs) . No se como obtener el objeto de una forma decente
-- Falta el punto 5. Que debe ser una basura.
-- Falta el punto 6. Pero ya esta avanzado el tema de la vida 
-- Falta el punto 7. Que no tiene mucha complejidad
-- Falta el punto 8. Documentar con calidad
+- Falta el punto 5. 
+- Falta el punto 6. 
+- Falta el punto 7.
+- Falta el punto 8. 
 
 
  Version Editor 2020.3.37f1 <br>
