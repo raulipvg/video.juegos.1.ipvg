@@ -12,7 +12,6 @@ public class Iniciar : MonoBehaviour
     [SerializeField] Transform[] camino3;
     [SerializeField] Transform[] camino4;
     [SerializeField] Transform[] camino5;
-
     // Start is called before the first frame update
     void Start()
     { 

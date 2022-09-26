@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemigo6 : Enemigos
+public class Enemigo6 : MonoBehaviour
 {
 
     // Start is called before the first frame update
@@ -10,6 +10,8 @@ public class Enemigo6 : Enemigos
     {
         
     }
+
+    /*
     private void OnCollisionEnter(Collision otro)
     {
 
@@ -17,6 +19,6 @@ public class Enemigo6 : Enemigos
            
     
     }
-
+    */
 
 }

@@ -34,5 +34,4 @@ public class Enemigo1 : MonoBehaviour
                 siguientePosicion = recorrido[nSiguientenPosicion].position;
             }
     }
-
 }

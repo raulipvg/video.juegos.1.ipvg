@@ -36,5 +36,4 @@ public class Enemigo3 : MonoBehaviour
 
 
     }
-
 }
