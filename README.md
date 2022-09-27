@@ -78,3 +78,4 @@ EnemigosStart: Se asignan de manera publica los 5 enemigos y 5 caminos respectiv
 <br>Version Editor 2020.3.37f1
 <br>Desarrollo para la Asignatura de Videojuegos IPVG Evaluacion 1
 <br> git config --global core.autocrlf false
+<br> git rm -r --cached
