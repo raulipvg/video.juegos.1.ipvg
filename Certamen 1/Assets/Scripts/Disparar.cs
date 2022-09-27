@@ -9,12 +9,6 @@ public class Disparar : MonoBehaviour
     [SerializeField]
     public float BalaVelocidad;
 
-
-    private void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

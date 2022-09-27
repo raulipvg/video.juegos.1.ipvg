@@ -12,11 +12,18 @@ public class Iniciar : MonoBehaviour
     [SerializeField] Transform[] camino3;
     [SerializeField] Transform[] camino4;
     [SerializeField] Transform[] camino5;
-    // Start is called before the first frame update
+
+    private static Transform[] c1;
+    private static Transform[] c2;
+    private static Transform[] c3;
+    private static Transform[] c4;
+    private static Transform[] c5;
+    private static List<int> recorridos;
+    private static Vector3[] posicionesIniciales;
     void Start()
     { 
 
-        Vector3[] posicionesIniciales = new Vector3[5];
+        posicionesIniciales = new Vector3[5];
 
         posicionesIniciales[0] = new Vector3(6.14f, 1.5f, 7.76f);
         posicionesIniciales[1]= new Vector3(-10.9f, 1.5f, -7.76f);
@@ -24,143 +31,40 @@ public class Iniciar : MonoBehaviour
         posicionesIniciales[3] = new Vector3(-16.49f, 1.5f, 6.65f);
         posicionesIniciales[4] = new Vector3(13.4f, 1.5f, -11.5f);
 
-        List<int> aux = new List<int> ();
+         recorridos = new List<int> ();
 
-        // Por cada Enemigo asignar posicion inicial y Vector de movimiento
+        // Se crea una lista llamada recorridos que indica el orden aleatorio de las posiciones y rutas a asignar a los 5 enemigos
         for (int i=0; i < posicionesIniciales.Length; i++)
         {
             int r = Random.Range(0, 5);
             
-            while ( aux.IndexOf(r) > -1 )
+            while (recorridos.IndexOf(r) > -1 )
             {
                 r = Random.Range(0, 5);
             }
-
-            aux.Add(r);
-
-            //Asigno posicion inicial al enemigo de forma aleatoria
-            enemigos[i].transform.position = posicionesIniciales[r];
-            
-
-            //Segun que enemigo sea asignar camino a tomar
-            if (i == 0)
-            {
-                //Segun asignacion aleatoria de posicion inicial, se le asigna una ruta o camino a trazar
-                switch (r)
-                {
-                    case 0:
-                        Enemigo1.IniciarEnemigo(camino1);
-                        break;
-                    case 1:
-                        Enemigo1.IniciarEnemigo(camino2);
-                        break;
-                    case 2:
-                        Enemigo1.IniciarEnemigo(camino3);
-                        break;
-                    case 3:
-                        Enemigo1.IniciarEnemigo(camino4);
-                        break;
-                    case 4:
-                        Enemigo1.IniciarEnemigo(camino5);
-                        break;
-                }
-            }
-
-            else if (i == 1)
-            {
-                switch (r)
-                {
-                    case 0:
-                        Enemigo2.IniciarEnemigo(camino1);
-                        break;
-                    case 1:
-                        Enemigo2.IniciarEnemigo(camino2);
-                        break;
-                    case 2:
-                        Enemigo2.IniciarEnemigo(camino3);
-                        break;
-                    case 3:
-                        Enemigo2.IniciarEnemigo(camino4);
-                        break;
-                    case 4:
-                        Enemigo2.IniciarEnemigo(camino5);
-                        break;
-                }
-            }
-
-            else if (i == 2)
-            {
-                switch (r)
-                {
-                    case 0:
-                        Enemigo3.IniciarEnemigo(camino1);
-                        break;
-                    case 1:
-                        Enemigo3.IniciarEnemigo(camino2);
-                        break;
-                    case 2:
-                        Enemigo3.IniciarEnemigo(camino3);
-                        break;
-                    case 3:
-                        Enemigo3.IniciarEnemigo(camino4);
-                        break;
-                    case 4:
-                        Enemigo3.IniciarEnemigo(camino5);
-                        break;
-                }
-            }
-
-            else if (i == 3)
-            {
-                switch (r)
-                {
-                    case 0:
-                        Enemigo4.IniciarEnemigo(camino1);
-                        break;
-                    case 1:
-                        Enemigo4.IniciarEnemigo(camino2);
-                        break;
-                    case 2:
-                        Enemigo4.IniciarEnemigo(camino3);
-                        break;
-                    case 3:
-                        Enemigo4.IniciarEnemigo(camino4);
-                        break;
-                    case 4:
-                        Enemigo4.IniciarEnemigo(camino5);
-                        break;
-                }
-            }
-            else if (i == 4)
-            {
-                switch (r)
-                {
-                    case 0:
-                        Enemigo5.IniciarEnemigo(camino1);
-                        break;
-                    case 1:
-                        Enemigo5.IniciarEnemigo(camino2);
-                        break;
-                    case 2:
-                        Enemigo5.IniciarEnemigo(camino3);
-                        break;
-                    case 3:
-                        Enemigo5.IniciarEnemigo(camino4);
-                        break;
-                    case 4:
-                        Enemigo5.IniciarEnemigo(camino5);
-                        break;
-                }
-            }
-
-
-
+            recorridos.Add(r);
         }
-
-
-
+        c1 = camino1;
+        c2 = camino2;
+        c3 = camino3;
+        c4 = camino4;
+        c5 = camino5;
     }
+    //Retorna el recorrido para el enemigo i segun la asignacion aleatoria 
+    private static int getRecorrido(int i) { return recorridos[i]; }
 
-   
+    //Asigna posicion aleatoria a un enemigo en particular
+    public static Vector3 asignarPosicion(int nEnemigo) { return posicionesIniciales[getRecorrido(nEnemigo)]; }
 
+    //Asigna el camino a seguir por un enemigo segun el seteo aleatorio
+    public static Transform[] asignarCamino(int nEnemigo)
+    {
+        int camino = getRecorrido(nEnemigo);
+        if (camino == 0){ return c1;
+        }else if (camino == 1){ return c2;
+        }else if (camino == 2){ return c3;
+        }else if (camino == 3){ return c4;
+        }else { return c5; 
+        }
+    }
 }

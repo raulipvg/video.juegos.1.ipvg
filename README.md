@@ -1,6 +1,6 @@
 # Trabajo 1 - Parte 1, Réplica Battle City Tank 3D
 
-## Descripción
+## Descripción del Juego
 <br>Proyecto para la asignatura Taller de Videojuegos del Instituto Profesional Virginio Gómez. Consiste en replicar el juego Battle City Tank versión 3D, usando el motor gráfico de Unity en 3D, junto con C# como lenguaje para los scripts. El proyecto incluye la creación del laberinto, posicionar elementos en él y que tengan movimiento, trabajar las colisiones, almacenar los elementos destruidos como puntuación, modificar la dificultad (disparos para destruir un enemigo), y recargar la escena al quedar sin enemigos.
 
 <br>Para el personaje del usuario se usó un cilindro rojo, mientras que los enemigos tienen forma de esfera o cubo, con distintos colores. Las balas son esferas rojas de menor tamaño.
@@ -17,7 +17,21 @@
 - Barra espaciadora: Disparar
 <br>
 
+## Sobre el Codigo
+GameController: Se setea la dificultad en el Inspector con variables 1,2,3. Que corresponde a la vida de los enemigos.
+EnemigosStart: Se asignan de manera publica los 5 enemigos y 5 caminos respectivos para asociarlos al Iniciar.cs. 
+
+
+
 ## Notas de versión
+
+### 1.04
+- Se le asigna orden de ejecucion a los scripts para que no existan conflictos. (En edit->Project Settings)
+- GameController.cs: Se modifica la condicion de finalizacion del juego de update() a destruye()
+- GameController.cs: Se crea metodo getVidaEnemigos(). Con el objtivo que sea mas orientado a objetos
+- Iniciar.cs: Se reescribe el codigo de inicializacion de enemigos en su posicion y recorrido. Se hace el codigo mas legible y O.O
+- Enemigo1...5.cs: Se reescribe el codigo y se crea la funcion Start() para realizar las llamadas a la clase Iniciar.cs
+- Se comenta mas el codigo 
 
 ### V1.03
 - Se modifica el radio del collider de Personaje para evitar el cruzar paredes en las uniones.
@@ -59,5 +73,5 @@
 - Falta el punto 8.
 
 <br>Version Editor 2020.3.37f1
-<br>Edicion de Raul
 <br>Desarrollo para la Asignatura de Videojuegos IPVG Evaluacion 1
+<br> git config --global core.autocrlf false

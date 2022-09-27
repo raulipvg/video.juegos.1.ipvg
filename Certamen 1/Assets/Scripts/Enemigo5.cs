@@ -9,13 +9,13 @@ public class Enemigo5 : MonoBehaviour
     float velocidad = 9.0f;
     float distanciaCambio = 0.5f;
     int nSiguientenPosicion = 0;
-    public static void IniciarEnemigo(Transform[] recorrido1)
+    private void Start()
     {
-        siguientePosicion = recorrido1[0].position;
-        recorrido = recorrido1;
+        transform.position = Iniciar.asignarPosicion(4);
+        recorrido = Iniciar.asignarCamino(4);
+        siguientePosicion = recorrido[0].position;
     }
-
-        // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         transform.position = Vector3.MoveTowards(

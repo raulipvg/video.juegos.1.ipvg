@@ -11,25 +11,22 @@ public class Enemigos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vidas = GameController.vidasEnemigos;       // Obtiene la cantidad de vidas según el nivel de dificultad
+        vidas = GameController.getVidaEnemigos();       // Obtiene la cantidad de vidas según el nivel de dificultad
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        vidas--;
-        if (vidas <=0)                                      //Utiliza <= ya que puede recibir dos balas contínuas que no alcance a calcular, lo que podría dar un falso negativo a ==0
+        // Debug.Log("Choque con otro trigger");
+        if (other.gameObject.CompareTag("Bala"))     // Identifica mediante la etiqueta si la colisión fue por una bala
         {
-            FindObjectOfType<GameController>().Destruye();  //Llama la función de GameController para aumentar el contador de enemigos destruídos
-            Destroy(gameObject);                            //Destruye al enemigo que fue colisionado por la bala
-        }
+            vidas--;
+            if (vidas <= 0)                                      //Utiliza <= ya que puede recibir dos balas contínuas que no alcance a calcular, lo que podría dar un falso negativo a ==0
+            {
+                FindObjectOfType<GameController>().Destruye();  //Llama la función de GameController para aumentar el contador de enemigos destruídos
+                Destroy(gameObject);                            //Destruye al enemigo que fue colisionado por la bala
+            }
 
-        Destroy(other.gameObject);                          //Destruye la bala que colisionó al enemigo.
+            Destroy(other.gameObject); //Destruye la bala que colisionó al enemigo.
+        }
     }
 
 }
